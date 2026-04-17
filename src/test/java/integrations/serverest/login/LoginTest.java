@@ -12,15 +12,13 @@ import org.junit.jupiter.api.DisplayName;
 
 import static core.api.request.utils.HandlerProperties.getValue;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 
 @Epic("Login")
 @Feature("Login realizado com sucesso para gerar token authorization")
 public class LoginTest extends BaseApi {
 
-    private final LoginRequest request = new LoginRequest();
-    public String token;
+    private static final LoginRequest request = new LoginRequest();
+    public static String token;
 
     @Test
     @DisplayName("CT01 - Validar login e geração de token pela aplicação")
@@ -46,6 +44,7 @@ public class LoginTest extends BaseApi {
     }
 
     public String getToken(){
+        postLoginAuth();
         return token;
     }
 }
