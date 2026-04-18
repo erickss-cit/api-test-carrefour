@@ -7,7 +7,8 @@ import integrations.serverest.login.LoginTest;
 import io.qameta.allure.Description;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static core.api.request.utils.HandlerProperties.getValue;
@@ -28,7 +29,7 @@ public class UsuariosTest extends BaseApi {
         login.getToken();
         Response response =
                 request.getUserRequest("/usuarios");
-        assertEquals(HttpStatus.SC_OK, response.statusCode());
+        Assertions.assertEquals(HttpStatus.SC_OK, response.statusCode());
         JsonUtils.retornaResponseEmString(response);
     }
 
@@ -39,8 +40,8 @@ public class UsuariosTest extends BaseApi {
         login.getToken();
         Response response =
                 request.postUserRequest("/usuarios", getValue("NOME_CADASTRO"), getValue("EMAIL_CADASTRO"), getValue("PASSWORD_CADASTRO"), getValue("ADMINISTRADOR"));
-        assertEquals(HttpStatus.SC_CREATED, response.statusCode());
-        assertEquals("Cadastro realizado com sucesso", response.getBody().jsonPath().get("message"));
+        Assertions.assertEquals(HttpStatus.SC_CREATED, response.statusCode());
+        Assertions.assertEquals("Cadastro realizado com sucesso", response.getBody().jsonPath().get("message"));
         JsonUtils.retornaResponseEmString(response);
     }
 

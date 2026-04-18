@@ -7,11 +7,11 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static core.api.request.utils.HandlerProperties.getValue;
-import static org.junit.Assert.assertEquals;
 
 @Epic("Login")
 @Feature("Login realizado com sucesso para gerar token authorization")
@@ -26,7 +26,7 @@ public class LoginTest extends BaseApi {
     public void postLoginAuth(){
         Response response =
                 request.postLoginRequest("/login", getValue("EMAIL"), getValue("PASSWORD"));
-        assertEquals(HttpStatus.SC_OK, response.statusCode());
+        Assertions.assertEquals(HttpStatus.SC_OK, response.statusCode());
         token = response.getBody().jsonPath().get("authorization").toString();
         System.out.println(token);
     }
@@ -37,9 +37,9 @@ public class LoginTest extends BaseApi {
     public void postLoginAuthIncorreto(){
         Response response =
                 request.postLoginRequest("/login", getValue("EMAIL_INCORRETO"), getValue("PASSWORD_INCORRETO"));
-        assertEquals(HttpStatus.SC_UNAUTHORIZED, response.statusCode());
+        Assertions.assertEquals(HttpStatus.SC_UNAUTHORIZED, response.statusCode());
         String message = response.getBody().jsonPath().get("message").toString();
-        assertEquals("Email e/ou senha inválidos", message);
+        Assertions.assertEquals("Email e/ou senha inválidos", message);
         System.out.println(message);
     }
 
