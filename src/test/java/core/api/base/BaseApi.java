@@ -3,12 +3,13 @@ package core.api.base;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.BeforeClass;
+
 import static io.restassured.RestAssured.*;
 
 public class BaseApi {
 
-    @BeforeAll
+    @BeforeClass
     public static void setup(){
         enableLoggingOfRequestAndResponseIfValidationFails();
         RestAssured.baseURI = "https://serverest.dev/";
