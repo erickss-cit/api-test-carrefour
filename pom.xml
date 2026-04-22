@@ -35,6 +35,18 @@
             <version>6.0.3</version>
         </dependency>
         <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>6.0.3</version> <!-- ou a versão mais recente -->
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>6.0.3</version> <!-- ou a versão mais recente -->
+            <scope>test</scope>
+        </dependency>
+        <dependency>
                 <groupId>io.rest-assured</groupId>
                 <artifactId>rest-assured</artifactId>
                 <version>6.0.0</version>

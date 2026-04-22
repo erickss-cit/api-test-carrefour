@@ -7,12 +7,11 @@ import integrations.serverest.login.LoginTest;
 import io.qameta.allure.Description;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static core.api.request.utils.HandlerProperties.getValue;
-import static org.junit.Assert.assertEquals;
 
 public class UsuariosTest extends BaseApi {
 
