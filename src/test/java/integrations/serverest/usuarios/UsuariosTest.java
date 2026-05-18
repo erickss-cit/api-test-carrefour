@@ -4,6 +4,8 @@ import core.api.base.BaseApi;
 import core.api.request.serverest.login.UsuariosRequest;
 import core.api.request.utils.ServicesUtils;
 import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 import org.junit.Test;
@@ -12,6 +14,8 @@ import org.junit.jupiter.api.DisplayName;
 
 import static core.api.request.utils.HandlerProperties.getValue;
 
+@Epic("Usuarios")
+@Feature("CRUD Usuarios")
 public class UsuariosTest extends BaseApi {
 
     private final UsuariosRequest request = new UsuariosRequest();

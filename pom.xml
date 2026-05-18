@@ -146,7 +146,7 @@
                     <testFailureIgnore>true</testFailureIgnore>
                     <properties>
                         <property>
-                            <name>Listener</name>
+                            <name>listener</name>
                             <value>io.qameta.allure.junit4.AllureJunit4</value>
                         </property>
                     </properties>
