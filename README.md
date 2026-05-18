@@ -67,7 +67,7 @@ Usuarios
 
 - Após a execução do cenário de teste, para que esteja atualizado, use os comandos do maven para limpar e compilar o projeto da seguinte forma:
 
-mvn clean
-mvn install
+  mvn clean
+  mvn install
 
 - Após a execução do comando, abra a pasta do projeto, abra o terminal do windows e digite o comando "allure serve target/allure-results", dessa forma, irá carregar o reporte atualizado com os cenários desenvolvidos.
