@@ -10,7 +10,7 @@ import java.util.Map;
 
 @Epic("Usuarios")
 @Feature("Gerencie os usuários, consulte dados para login e cadastre administrador")
-public class UsuariosRequest {
+public class UsuariosRequest{
 
     private static final LoginRequest request = new LoginRequest();
 
@@ -28,9 +28,5 @@ public class UsuariosRequest {
             }
         };
         return BaseApi.post(path, json);
-    }
-
-    public Response getUserRequestByEmail(String path) {
-        return BaseApi.get(path);
     }
 }

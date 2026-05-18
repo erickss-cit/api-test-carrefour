@@ -1,11 +1,24 @@
 package core.api.request.utils;
 
-import io.restassured.RestAssured;
+import core.api.base.BaseApi;
+import core.api.request.serverest.login.UsuariosRequest;
+import integrations.serverest.login.LoginTest;
+import integrations.serverest.usuarios.UsuariosTest;
 import io.restassured.response.Response;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class JsonUtils {
+import static integrations.serverest.login.LoginTest.token;
+
+public class ServicesUtils extends BaseApi {
+
+    private final LoginTest login = new LoginTest();
+//    private final UsuariosTest usuarios = new UsuariosTest();
+
+    public String getToken() {
+        login.postLoginAuth();
+        return token;
+    }
 
     public static String convertJsonToString(JSONObject jsonResponse) {
         return jsonResponse.toString();
@@ -22,8 +35,11 @@ public class JsonUtils {
             } catch (JSONException e) {
                 System.err.println("Falha em converter para JSON: " + e.getMessage());
             }
+
         } else {
             System.err.println("Response body não é nullo ou vazio");
         }
     }
+
+
 }

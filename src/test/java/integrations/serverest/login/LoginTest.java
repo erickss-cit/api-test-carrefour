@@ -1,5 +1,6 @@
 package integrations.serverest.login;
 
+import com.fasterxml.jackson.databind.ser.Serializers;
 import core.api.base.BaseApi;
 import core.api.request.serverest.login.LoginRequest;
 import io.qameta.allure.Description;
@@ -28,7 +29,6 @@ public class LoginTest extends BaseApi {
                 request.postLoginRequest("/login", getValue("EMAIL"), getValue("PASSWORD"));
         Assertions.assertEquals(HttpStatus.SC_OK, response.statusCode());
         token = response.getBody().jsonPath().get("authorization").toString();
-        System.out.println(token);
     }
 
     @Test
@@ -40,11 +40,5 @@ public class LoginTest extends BaseApi {
         Assertions.assertEquals(HttpStatus.SC_UNAUTHORIZED, response.statusCode());
         String message = response.getBody().jsonPath().get("message").toString();
         Assertions.assertEquals("Email e/ou senha inválidos", message);
-        System.out.println(message);
-    }
-
-    public String getToken(){
-        postLoginAuth();
-        return token;
     }
 }
