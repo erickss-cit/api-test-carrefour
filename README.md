@@ -22,7 +22,7 @@
 
 ## Como Executar os cenários
 
-O projeto foi criado no intuito de estar o mais diversificado possível para execução dos cenários, abaixo as formas de execução via IntellijIdea e Eclipse:
+O projeto foi criado no intuito de estar o mais diversificado possível para execução dos cenários, abaixo as formas de execução via IntellijIdea:
 
 - IntellijIdea
 Você pode executar via linha de comando:
@@ -31,7 +31,6 @@ mvn clean
 mvn install
 mvn -Dtest=NomeDaClasseTeste test
 
-
 - Você pode executar via classe do projeto, com o JUnit instalado, pode rodar um unico teste ou todos os testes da classe;
 - Você pode executar via classe RunnerIT do projeto, configurando a suite de teste, executando as classes configuradas.
 
@@ -39,11 +38,12 @@ mvn -Dtest=NomeDaClasseTeste test
 
  - Para planejar os cenários de teste abaixo e suas validações internas, foi levado os seguintes pontos:
 
-1. Path Coverage (input)
-2. Operator Coverage (input)
-3. Parameter Coverage (input)
-4. Operation Flow (input)
-5. Status Code Coverage (Output)
+
+1. Parameter Coverage (input)
+2. Operation Flow (input)
+3. Status Code Coverage (Output)
+4. Teste de Aceite
+5. Teste Negativo
 
 Login
 - POST /
